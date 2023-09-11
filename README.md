@@ -37,6 +37,10 @@
 ## Demo
 
 You can try out the calculator app by visiting the [live demo](https://your-demo-url.com).
+1. Clone the repository:
+
+   ```bash
+   git clone git@github.com:Hsuwaddyhtat22/React-Math-Setup.git
 
 ## Installation
 
@@ -46,14 +50,8 @@ Install this project with:
   cd my-project
   npm install
 ```
-1. Clone the repository:
-
-   ```bash
-   git clone git@github.com:Hsuwaddyhtat22/React-Math-Setup.git
-
-   
-   ## 👥 Authors <a name="authors"></a>
-
+    
+  ## 👥 Authors <a name="authors"></a>
 👤 **Hsu Waddy Htat**
 
 - GitHub: [@githubhandle](https://github.com/Hsuwaddyhtat22)
