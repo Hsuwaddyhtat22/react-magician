@@ -37,9 +37,6 @@ button:hover {
   background-color: #ccc;
 }
 
-
-/* Apply a different background color to the last column buttons */
-
 button:nth-child(4n) {
   background-color: #f2a900;
 }
