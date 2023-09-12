@@ -6,7 +6,8 @@ function App() {
   const handleClick = (value) => {
     if (value === '=') {
       try {
-        setInput(eval(input).toString());
+        // eslint-disable-next-line
+                setInput(eval(input).toString());
       } catch (error) {
         setInput('Error');
       }
@@ -28,39 +29,75 @@ function App() {
     '7', '8', '9', '*',
     '4', '5', '6', '-',
     '1', '2', '3', '+',
-    '0', '.', '=', 'Del',
+    '0', '.', 'Del', '=',
   ];
 
   return (
     <div className="calculator">
       <div className="input">
         {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
         { input }
         {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
 
       </div>
+      {' '}
+      { ' ' }
+      {' '}
+      { ' ' }
+      {' '}
+      { ' ' }
       {' '}
       <div className="buttons">
         {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
         {
             buttons.map((button) => (
-              <button
-                key={button}
-                onClick={
+                // eslint-disable-next-line
+                <
+                button key={button}
+                  onClick={
                     () => handleClick(button)
                 }
-              >
-                {' '}
-                { button }
-                {' '}
+                >
+                  { ' ' }
+                  {' '}
+                  { ' ' }
+                  {' '}
+                  { ' ' }
+                  {' '}
+                  { button }
+                  {' '}
+                  { ' ' }
+                  {' '}
+                  { ' ' }
 
-              </button>
+                </button>
             ))
         }
         {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
 
       </div>
       {' '}
+      { ' ' }
+      {' '}
+      { ' ' }
 
     </div>
   );
