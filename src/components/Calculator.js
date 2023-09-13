@@ -1,27 +1,16 @@
 import React, { useState } from 'react';
+import calculate from '../logic/calculate';
 
-function App() {
-  const [input, setInput] = useState('');
+function Calculator() {
+  const [calculatorData, setCalculatorData] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
-  const handleClick = (value) => {
-    if (value === '=') {
-      try {
-        // eslint-disable-next-line
-                setInput(eval(input).toString());
-      } catch (error) {
-        setInput('Error');
-      }
-    } else if (value === 'C') {
-      setInput('');
-    } else if (value === 'AC') {
-      setInput('');
-    } else if (value === '+/-') {
-      setInput((prevInput) => (prevInput.charAt(0) === '-' ? prevInput.slice(1) : `-${prevInput}`));
-    } else if (value === 'Del') {
-      setInput((prevInput) => prevInput.slice(0, -1));
-    } else {
-      setInput(input + value);
-    }
+  const handleClick = (buttonName) => {
+    const newCalculatorData = calculate(calculatorData, buttonName);
+    setCalculatorData(newCalculatorData);
   };
 
   const buttons = [
@@ -36,71 +25,35 @@ function App() {
     <div className="calculator">
       <div className="input">
         {' '}
-        { ' ' }
+        { calculatorData.next || calculatorData.total || '0' }
         {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { input }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
 
       </div>
-      {' '}
-      { ' ' }
-      {' '}
-      { ' ' }
-      {' '}
-      { ' ' }
       {' '}
       <div className="buttons">
         {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
         {
             buttons.map((button) => (
-                // eslint-disable-next-line
-                <
-                button key={button}
-                  onClick={
+              <button
+                key={button}
+                onClick={
                     () => handleClick(button)
                 }
-                >
-                  { ' ' }
-                  {' '}
-                  { ' ' }
-                  {' '}
-                  { ' ' }
-                  {' '}
-                  { button }
-                  {' '}
-                  { ' ' }
-                  {' '}
-                  { ' ' }
+              >
+                {' '}
+                { button }
+                {' '}
 
-                </button>
+              </button>
             ))
         }
         {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
 
       </div>
       {' '}
-      { ' ' }
-      {' '}
-      { ' ' }
 
     </div>
   );
 }
 
-export default App;
+export default Calculator;
