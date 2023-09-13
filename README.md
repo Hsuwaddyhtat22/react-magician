@@ -37,6 +37,10 @@
 ## Demo
 
 You can try out the calculator app by visiting the [live demo](https://your-demo-url.com).
+1. Clone the repository:
+
+   ```bash
+   git clone git@github.com:Hsuwaddyhtat22/React-Math-Setup.git
 
 ## Installation
 
@@ -46,14 +50,8 @@ Install this project with:
   cd my-project
   npm install
 ```
-1. Clone the repository:
-
-   ```bash
-   git clone git@github.com:Hsuwaddyhtat22/React-Math-Setup.git
-
-   
-   ## 👥 Authors <a name="authors"></a>
-
+    
+  ## 👥 Authors <a name="authors"></a>
 👤 **Hsu Waddy Htat**
 
 - GitHub: [@githubhandle](https://github.com/Hsuwaddyhtat22)
@@ -70,8 +68,8 @@ To clear the input, press the "C" button.
 Contributions are welcome! If you have any bug fixes, enhancements, or new features to add, please open an issue or create a pull request.
 
 ## 📝 License <a name="license"></a>
-This project is licensed under the MIT License - see the LICENSE file for details.
-
+This project is [MIT](./LICENSE) licensed. 
+ 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 This project was created as a learning exercise for building a React application.
 The calculator component was inspired by microverse react curiculum.
