@@ -68,8 +68,8 @@ To clear the input, press the "C" button.
 Contributions are welcome! If you have any bug fixes, enhancements, or new features to add, please open an issue or create a pull request.
 
 ## 📝 License <a name="license"></a>
-This project is licensed under the MIT License. (./LICENSE)
-
+This project is licensed under the [MIT] (./LICENSE) licensed. 
+ 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 This project was created as a learning exercise for building a React application.
 The calculator component was inspired by microverse react curiculum.
