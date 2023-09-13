@@ -25,32 +25,66 @@ function Calculator() {
     <div className="calculator">
       <div className="input">
         {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
         { calculatorData.next || calculatorData.total || '0' }
         {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
 
       </div>
+      {' '}
+      { ' ' }
+      {' '}
+      { ' ' }
+      {' '}
+      { ' ' }
       {' '}
       <div className="buttons">
         {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
         {
             buttons.map((button) => (
-              <button
-                key={button}
-                onClick={
+                // eslint-disable-next-line
+                <
+                button key={button}
+                  onClick={
                     () => handleClick(button)
                 }
-              >
-                {' '}
-                { button }
-                {' '}
+                >
+                  { ' ' }
+                  {' '}
+                  { ' ' }
+                  {' '}
+                  { button }
+                  {' '}
+                  { ' ' }
+                  {' '}
+                  { ' ' }
 
-              </button>
+                </button>
             ))
         }
         {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
 
       </div>
       {' '}
+      { ' ' }
+      {' '}
+      { ' ' }
 
     </div>
   );
