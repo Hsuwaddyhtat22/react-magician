@@ -1,32 +1,58 @@
-# React-Math-Setup
-# React Calculator App
+<a name="readme-top"></a>
+<div align="center">
+  <h3><b>Leaderboard Project</b></h3>
+</div>
 
 # 📗 Table of Contents
 
-- [📖 Math-Magicians ](#-math_magicians-)
-  - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-    - [Key Features ](#key-features-)
-    - [🚀 Live Demo ](#-live-demo-) 
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Usage](#usage)
-    - [Run tests](#run-tests)
-    - [Deployment](#deployment)
-  - [👥 Authors ](#-authors-)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [📝 License ](#-license-)
-  - # 📖 Math Magicians <a name="about-project"></a>
-**Math Magicians**
-:this is a simple calculator app built using React. It can perform basic arithmetic operations like addition, subtraction, multiplication, and division.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+  - [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ (OPTIONAL)](#faq)
+- [📝 License](#license)
 
-## Features
+<!-- PROJECT DESCRIPTION -->
+# 📖 [LeaderBoard MINI PROJECT] <a name="about-project"></a>
 
+This is a simple calculator app built using React. It can perform basic arithmetic operations like addition, subtraction, multiplication, and division.
+
+
+## 🛠 Built With <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="#">HTML</a></li>
+  </ul>
+   <ul>
+    <li><a href="#">CSS</a></li>
+  </ul>
+   <ul>
+    <li><a href="#">Javascript</a></li>
+  </ul>
+  <ul>
+    <li><a href="#">React</a></li>
+  </ul>
+</details>
+          
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
 - Addition
 - Subtraction
 - Multiplication
@@ -34,9 +60,33 @@
 - Clear input
 - Evaluate expressions with multiple operators
 
-## Demo
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You can try out the calculator app by visiting the [live demo](https://your-demo-url.com).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+- To install a duplicate of this project on your computer, kindly abide by the guidelines provided below.
+
+### Prerequisites
+
+- To launch the project, please clone my repository onto your PC.
+
+### Setup
+
+ Clone this repository to your desired folder:
+  - Click Code button (shown in green color)
+  - Copy URL.
+  -Easy way(clone it to visual studio code)
+
+### Install
+
+- Install VS code, Node.js and git on your local computer.
+- Install webpack
+
 1. Clone the repository:
 
    ```bash
@@ -50,29 +100,88 @@ Install this project with:
   cd my-project
   npm install
 ```
-    
-  ## 👥 Authors <a name="authors"></a>
+### Usage
+
+- In order to run this project, please clone this repository to your PC and open index.html file.
+
+### Run tests
+
+To trace linter errors in VS code, please use the following commands:
+
+- For HTML:
+  
+```
+npx hint .
+```
+
+- For CSS:
+  
+```
+npx stylelint "**/*.{css,scss}"
+```
+
+- For Javascript:
+  
+```
+npx eslint .
+```
+
+### Deployment
+
+- You can deploy this project using: gitHub pages
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+  <!-- AUTHORS -->
+
+## 👥 Author <a name="authors"></a>
+
 👤 **Hsu Waddy Htat**
 
 - GitHub: [@githubhandle](https://github.com/Hsuwaddyhtat22)
 - Twitter: [@twitterhandle](https://twitter.com/HtatWaddy83921)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/mwlite/profile/in/hsu-waddy-313a40222)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Usage <a name="contributing"></a>
-Enter numbers and operators by clicking on the buttons or using your keyboard.
-Press the "=" button or the "Enter" key to calculate the result.
-To clear the input, press the "C" button.
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Add more webpages such as Program, Join, etc.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
-Contributions are welcome! If you have any bug fixes, enhancements, or new features to add, please open an issue or create a pull request.
+
+Contributions, issues, and feature requests are welcome!
+Feel free to check.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project, follow my Facebook Page and subscribe my You Tube Channel.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+- Credit to the Microverse for inspire design.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
-This project is [MIT](./LICENSE) licensed. 
- 
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-This project was created as a learning exercise for building a React application.
-The calculator component was inspired by microverse react curiculum.
 
-## 🤝Contact
-If you have any questions or need further assistance, feel free to contact the project maintainer at hsuwady2001@gmail.com.
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
