@@ -1,56 +1,56 @@
 .calculator {
-    float: right;
-    margin-right: 100px;
-    max-width: 400px;
-    border: 12px solid #f2a900;
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+  float: right;
+  margin-right: 100px;
+  max-width: 400px;
+  border: 12px solid #f2a900;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 * {
-    background-image: url(/image/flowers_.png);
-    background-blend-mode: color-burn;
+  background-image: url(/image/flowers_.png);
+  background-blend-mode: color-burn;
 }
 
 .input {
-    height: 60px;
-    text-align: right;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 5px;
-    background-color: darkgray;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  height: 60px;
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 5px;
+  background-color: darkgray;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
 }
 
 button {
-    font-size: 24px;
-    font-weight: bold;
-    background-color: #f0f0f0;
-    border: 3px solid #ccc;
-    border-radius: 25px;
-    cursor: pointer;
-    padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border: 3px solid #ccc;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px;
 }
 
 button:hover {
-    background-color: #ccc;
-    color: #f2a900;
+  background-color: #ccc;
+  color: #f2a900;
 }
 
 button:nth-child(4n) {
-    background-color: #f2a900;
+  background-color: #f2a900;
 }
 
 button:nth-child(4n):hover {
-    color: black;
+  color: black;
 }
