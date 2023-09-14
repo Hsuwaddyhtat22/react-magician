@@ -9,12 +9,30 @@ function App() {
     <div className="app-container">
       <h1 className="app-heading">
         {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
         Welcome to Our App
         {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+
       </h1>
       {' '}
+      { ' ' }
+      {' '}
+      { ' ' }
+      {' '}
+      { ' ' }
+      {' '}
       <Calculator />
-      <CustomQuote />
+      <CustomQuote
+        category="happiness"
+        apiKey="q/2+QpbXpKBC4M8F3JXLxQ==10lXcqJooy2U63OD"
+      />
     </div>
   );
 }

@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './CustomQuote.css';
 
-const CustomQuote = () => {
+const CustomQuote = (props) => {
+  const { category, apiKey } = props;
   const [quote, setQuote] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const category = 'happiness';
-    const apiKey = 'q/2+QpbXpKBC4M8F3JXLxQ==10lXcqJooy2U63OD';
-
     fetch(`https://api.api-ninjas.com/v1/quotes?category=${category}`, {
       method: 'GET',
       headers: { 'X-Api-Key': apiKey },
@@ -23,7 +22,7 @@ const CustomQuote = () => {
         setError(error);
         setLoading(false);
       });
-  }, []);
+  }, [category, apiKey]);
 
   if (loading) {
     return (
@@ -32,15 +31,10 @@ const CustomQuote = () => {
           <h2>
             {' '}
             { ' ' }
-            {' '}
-            { ' ' }
             Loading...
             {' '}
             { ' ' }
             {' '}
-            { ' ' }
-            {' '}
-            { ' ' }
 
           </h2>
         </div>
@@ -55,12 +49,9 @@ const CustomQuote = () => {
           <h2>
             {' '}
             { ' ' }
-            {' '}
-            { ' ' }
             Error: An error occurred!
             { ' ' }
             {' '}
-            { ' ' }
 
           </h2>
         </div>
@@ -73,21 +64,12 @@ const CustomQuote = () => {
       <h2>
         {' '}
         { ' ' }
-        {' '}
-        { ' ' }
         Unique Magicians
         {' '}
         { ' ' }
         {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
 
       </h2>
-      {' '}
-      { ' ' }
-      {' '}
-      { ' ' }
       {' '}
       { ' ' }
       {' '}
@@ -95,21 +77,11 @@ const CustomQuote = () => {
         {' '}
         { ' ' }
         {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
         { quote.quote }
-        {' '}
-        { ' ' }
         {' '}
         { ' ' }
 
       </p>
-      {' '}
-      { ' ' }
-      {' '}
-      { ' ' }
       {' '}
       { ' ' }
       {' '}
@@ -117,24 +89,22 @@ const CustomQuote = () => {
         {' '}
         { ' ' }
         {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
         { quote.author }
-        {' '}
-        { ' ' }
         {' '}
         { ' ' }
 
       </p>
       {' '}
       { ' ' }
-      {' '}
-      { ' ' }
 
     </div>
   );
+};
+
+// Define prop types for category and apiKey
+CustomQuote.propTypes = {
+  category: PropTypes.string.isRequired,
+  apiKey: PropTypes.string.isRequired,
 };
 
 export default CustomQuote;
