@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 <div align="center">
-  <h3><b>Leaderboard Project</b></h3>
+  <h3><b>Math Maicians</b></h3>
 </div>
 
 # 📗 Table of Contents
