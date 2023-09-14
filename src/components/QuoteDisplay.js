@@ -1,29 +1,204 @@
-import React, { useState } from 'react';
-import calculate from '../logic/calculate';
+import React, { useState, useEffect } from 'react';
 
-function Calculator() {
-  const [calculatorData, setCalculatorData] = useState({
-    total: null,
-    next: null,
-    operation: null,
-  });
+function QuoteDisplay() {
+  const [quote, setQuote] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const handleClick = (buttonName) => {
-    const newCalculatorData = calculate(calculatorData, buttonName);
-    setCalculatorData(newCalculatorData);
-  };
+  useEffect(() => {
+    const apiKey = 'q/2+QpbXpKBC4M8F3JXLxQ==10lXcqJooy2U63OD';
+    const category = 'happiness';
 
-  const buttons = [
-    'AC', '+/-', '%', '/',
-    '7', '8', '9', '*',
-    '4', '5', '6', '-',
-    '1', '2', '3', '+',
-    '0', '.', 'Del', '=',
-  ];
+    fetch(`https://api.api-ninjas.com/v1/quotes?category=${category}`, {
+      headers: { 'X-Api-Key': apiKey },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setIsLoading(false);
+        setQuote(data[0].quote);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        setError(error.message);
+      });
+  }, []);
+
+  if (isLoading) {
+    return <div> Loading... </div>;
+  }
+
+  if (error) {
+    return (
+      <div>
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        Error:
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { error }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+        {' '}
+        { ' ' }
+
+      </div>
+    );
+  }
 
   return (
-    <div className="calculator">
-      <div className="input">
+    <div>
+      <h2>
         {' '}
         { ' ' }
         {' '}
@@ -88,6 +263,7 @@ function Calculator() {
         { ' ' }
         {' '}
         { ' ' }
+        MATH MAGICIANS
         {' '}
         { ' ' }
         {' '}
@@ -120,38 +296,6 @@ function Calculator() {
         { ' ' }
         {' '}
         { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { calculatorData.next || calculatorData.total || '0' }
         {' '}
         { ' ' }
         {' '}
@@ -217,7 +361,7 @@ function Calculator() {
         {' '}
         { ' ' }
 
-      </div>
+      </h2>
       {' '}
       { ' ' }
       {' '}
@@ -345,7 +489,7 @@ function Calculator() {
       {' '}
       { ' ' }
       {' '}
-      <div className="buttons">
+      <p>
         {' '}
         { ' ' }
         {' '}
@@ -473,159 +617,7 @@ function Calculator() {
         {' '}
         { ' ' }
         {' '}
-        {
-            buttons.map((button) => (
-
-              <button
-                key={button}
-                type="button"
-                onClick={
-                    () => handleClick(button)
-                }
-              >
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { button }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-                {' '}
-                { ' ' }
-
-              </button>
-            ))
-        }
+        { quote }
         {' '}
         { ' ' }
         {' '}
@@ -691,7 +683,7 @@ function Calculator() {
         {' '}
         { ' ' }
 
-      </div>
+      </p>
       {' '}
       { ' ' }
       {' '}
@@ -761,4 +753,4 @@ function Calculator() {
   );
 }
 
-export default Calculator;
+export default QuoteDisplay;
