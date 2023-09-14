@@ -26,7 +26,7 @@
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
-# 📖 [LeaderBoard MINI PROJECT] <a name="about-project"></a>
+# 📖 [MATH MAGICIAN] <a name="about-project"></a>
 
 This is a simple calculator app built using React. It can perform basic arithmetic operations like addition, subtraction, multiplication, and division.
 
