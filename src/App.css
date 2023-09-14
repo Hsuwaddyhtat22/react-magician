@@ -12,6 +12,7 @@
 * {
   background-image: url(/image/flowers_.png);
   background-blend-mode: color-burn;
+  background-size: cover;
 }
 
 .input {
