@@ -1,0 +1,27 @@
+.custom-container {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.custom-wrapper {
+  text-align: center;
+}
+
+.custom-quote {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+.custom-author {
+  font-style: italic;
+  color: #dcac00;
+}
+
+.app-heading {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 50px;
+  color: #333;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}

@@ -1,27 +1,20 @@
 // src/App.js
 import React from 'react';
 import Calculator from './components/Calculator';
-import MainComponent from './components/MainComponent'; // Import MainComponent
+import CustomQuote from './components/QuoteDisplay'; // Import MainComponent
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app-container">
+      <h1 className="app-heading">
+        {' '}
+        Welcome to Our App
+        {' '}
+      </h1>
+      {' '}
       <Calculator />
-      <MainComponent />
-      {' '}
-      { ' ' }
-      {' '}
-      { ' ' }
-      {' '}
-      { ' ' }
-      {' '}
-      { /* Use MainComponent here */ }
-      {' '}
-      { ' ' }
-      {' '}
-      { ' ' }
-
+      <CustomQuote />
     </div>
   );
 }
