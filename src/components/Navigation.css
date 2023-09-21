@@ -1,0 +1,34 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #c9a61a;
+}
+
+.logo a {
+  text-decoration: none;
+  color: rgb(98, 21, 21);
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(98, 21, 21);
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.active-link {
+  color: #f90;
+}

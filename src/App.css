@@ -1,5 +1,6 @@
 .calculator {
   float: right;
+  margin-top: 20px;
   margin-right: 100px;
   max-width: 400px;
   border: 12px solid #f2a900;
@@ -9,7 +10,7 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-* {
+body {
   background-image: url(/image/flowers_.png);
   background-blend-mode: color-burn;
   background-size: cover;
