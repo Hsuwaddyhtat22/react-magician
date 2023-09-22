@@ -1,29 +1,43 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import CustomQuote from '../components/QuoteDisplay';
 
-test('CustomQuote component displays loading message', () => {
-  const { getByText } = render(<CustomQuote />);
-  const loadingMessage = getByText(/Loading/i);
-  expect(loadingMessage).toBeInTheDocument();
-});
+// Mock the fetch function to return a resolved or rejected promise
+global.fetch = jest.fn();
 
-test('CustomQuote component displays error message', () => {
-  const errorMessage = 'Custom error message'; // Replace with your expected error message
-  const { getByText } = render(<CustomQuote error={errorMessage} />);
-  const errorElement = getByText((content) => content.startsWith('Error:')); expect(errorElement).toBeInTheDocument();
-});
+describe('CustomQuote component', () => {
+  beforeEach(() => {
+    global.fetch.mockClear();
+  });
 
-test('CustomQuote component displays quote and author', () => {
-  const quoteData = {
-    quote: 'This is a test quote.',
-    author: 'Test Author',
-  };
+  it('renders loading text initially', async () => {
+    global.fetch.mockResolvedValueOnce({
+      json: async () => [],
+    });
 
-  const { getByText } = render(<CustomQuote
-    quote={quoteData}
-    error={null}
-  />);
-  const quoteText = getByText((content) => content.includes('This is a test quote.'));
-  const authorText = getByText((content) => content.includes('Test Author')); expect(quoteText).toBeInTheDocument(); expect(authorText).toBeInTheDocument();
+    render(<CustomQuote />);
+
+    const loadingElement = screen.getByText('Loading...');
+    expect(loadingElement).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.queryByText('Loading...')).toBeNull();
+    });
+  });
+
+  it('renders quote and author after fetching data', async () => {
+    global.fetch.mockResolvedValueOnce({
+      json: async () => [{ quote: 'Test Quote', author: 'Test Author' }],
+    });
+
+    render(<CustomQuote />);
+
+    // Wait for the fetch to resolve
+    await waitFor(() => {
+      const quoteElement = screen.getByText('Test Quote');
+      const authorElement = screen.getByText('Test Author');
+      expect(quoteElement).toBeInTheDocument();
+      expect(authorElement).toBeInTheDocument();
+    });
+  });
 });

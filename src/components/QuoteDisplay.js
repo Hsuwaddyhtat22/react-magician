@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CustomQuote.css';
 
-const CustomQuote = (props) => {
+const CustomQuote = () => {
   const [quote, setQuote] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,6 +16,7 @@ const CustomQuote = (props) => {
     })
       .then((response) => response.json())
       .then((data) => {
+        // Check if the data is an array and has at least one quote
         if (Array.isArray(data) && data.length > 0) {
           setQuote(data[0]);
         } else {
@@ -35,8 +36,12 @@ const CustomQuote = (props) => {
         <div className="custom-wrapper">
           <h2>
             {' '}
+            { ' ' }
             Loading...
             {' '}
+            { ' ' }
+            {' '}
+
           </h2>
         </div>
       </div>
@@ -49,8 +54,12 @@ const CustomQuote = (props) => {
         <div className="custom-wrapper">
           <h2>
             {' '}
+            { ' ' }
             Error:
+            {' '}
             { error }
+            {' '}
+
           </h2>
         </div>
       </div>
@@ -61,24 +70,39 @@ const CustomQuote = (props) => {
     <div className="custom-quote">
       <h2>
         {' '}
+        { ' ' }
         Unique Magicians
         {' '}
+        { ' ' }
+        {' '}
+
       </h2>
+      {' '}
+      { ' ' }
       {' '}
       <p>
         {' '}
+        { ' ' }
+        {' '}
         { quote.quote }
         {' '}
+        { ' ' }
 
       </p>
+      {' '}
+      { ' ' }
       {' '}
       <p className="custom-author">
         {' '}
+        { ' ' }
+        {' '}
         { quote.author }
         {' '}
+        { ' ' }
 
       </p>
       {' '}
+      { ' ' }
 
     </div>
   );
