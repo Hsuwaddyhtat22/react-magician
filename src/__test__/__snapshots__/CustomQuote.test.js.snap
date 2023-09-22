@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CustomQuote component 1`] = `
+<div>
+  <div
+    class="custom-container"
+  >
+    <div
+      class="custom-wrapper"
+    >
+      <h2>
+         
+         
+        Loading...
+         
+         
+         
+      </h2>
+    </div>
+  </div>
+</div>
+`;

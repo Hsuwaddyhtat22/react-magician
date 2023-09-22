@@ -36,8 +36,12 @@ const CustomQuote = () => {
         <div className="custom-wrapper">
           <h2>
             {' '}
+            { ' ' }
             Loading...
             {' '}
+            { ' ' }
+            {' '}
+
           </h2>
         </div>
       </div>
@@ -50,8 +54,12 @@ const CustomQuote = () => {
         <div className="custom-wrapper">
           <h2>
             {' '}
+            { ' ' }
             Error:
+            {' '}
             { error }
+            {' '}
+
           </h2>
         </div>
       </div>
@@ -62,24 +70,39 @@ const CustomQuote = () => {
     <div className="custom-quote">
       <h2>
         {' '}
+        { ' ' }
         Unique Magicians
         {' '}
+        { ' ' }
+        {' '}
+
       </h2>
+      {' '}
+      { ' ' }
       {' '}
       <p>
         {' '}
+        { ' ' }
+        {' '}
         { quote.quote }
         {' '}
+        { ' ' }
 
       </p>
+      {' '}
+      { ' ' }
       {' '}
       <p className="custom-author">
         {' '}
+        { ' ' }
+        {' '}
         { quote.author }
         {' '}
+        { ' ' }
 
       </p>
       {' '}
+      { ' ' }
 
     </div>
   );
