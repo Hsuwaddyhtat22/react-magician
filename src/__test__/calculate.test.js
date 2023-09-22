@@ -1,21 +1,19 @@
-import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-import Calculator from '../components/Calculator';
+import calculate from '../logic/calculate';
 
-test('renders calculator', () => {
-  const { container } = render(<Calculator />);
-  expect(container).toMatchSnapshot();
-});
+test('calculate function snapshots', () => {
+  // Test various scenarios with the calculate function
+  const scenarios = [
+    { state: { total: '123', next: '456', operation: '+' }, button: 'AC' },
+    { state: { total: '123', next: '456', operation: '+' }, button: '7' },
+    { state: { total: '123', next: '456', operation: '+' }, button: '.' },
+    { state: { total: '10', next: '5', operation: '+' }, button: '=' },
+    { state: { total: null, next: '5', operation: null }, button: '+/-' },
+    { state: { total: '987', next: null, operation: '+' }, button: 'Del' },
+    { state: { total: '10', next: '0', operation: '/' }, button: '/' },
+  ];
 
-test('clicking AC button resets the display to "0"', () => {
-  const { container } = render(<Calculator />);
-  fireEvent.click(screen.getByText('AC'));
-  expect(container).toMatchSnapshot();
-});
-
-test('clicking number buttons updates the display', () => {
-  const { container } = render(<Calculator />);
-  fireEvent.click(screen.getByText('1'));
-  fireEvent.click(screen.getByText('2'));
-  expect(container).toMatchSnapshot();
+  scenarios.forEach((scenario, index) => {
+    const result = calculate(scenario.state, scenario.button);
+    expect(result).toMatchSnapshot(`Scenario ${index + 1}`);
+  });
 });
