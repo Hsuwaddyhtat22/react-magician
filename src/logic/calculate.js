@@ -14,48 +14,32 @@ export default function calculate(obj, buttonName) {
   }
 
   if (isNumber(buttonName)) {
-    if (buttonName === '0' && obj.next === '0') {
-      return {};
-    }
-    if (obj.operation) {
-      if (obj.next === '0' || obj.next === null) {
+    if (obj.operation === null) {
+      if (obj.next === null) {
+        return { ...obj, next: buttonName };
+      } if (obj.next === '0') {
         return { ...obj, next: buttonName };
       }
       return { ...obj, next: obj.next + buttonName };
     }
-    if (obj.next && obj.next !== '0') {
-      return {
-        next: obj.next + buttonName,
-        total: null,
-      };
+    if (obj.next === null) {
+      return { ...obj, next: buttonName };
     }
-    return {
-      next: buttonName,
-      total: null,
-    };
+    return { ...obj, next: obj.next + buttonName };
   }
 
   if (buttonName === '.') {
-    if (obj.next) {
-      if (obj.next.includes('.')) {
-        return { ...obj };
-      }
-      return { ...obj, next: `${obj.next}.` };
-    }
-    if (obj.operation) {
+    if (obj.next === null) {
       return { ...obj, next: '0.' };
     }
-    if (obj.total) {
-      if (obj.total.includes('.')) {
-        return {};
-      }
-      return { ...obj, next: `${obj.total}.` };
+    if (!obj.next.includes('.')) {
+      return { ...obj, next: `${obj.next}.` };
     }
-    return { ...obj, next: '0.' };
+    return { ...obj };
   }
 
   if (buttonName === '=') {
-    if (obj.next && obj.operation) {
+    if (obj.next !== null && obj.operation !== null) {
       try {
         const total = operate(obj.total, obj.next, obj.operation);
         return {
@@ -71,29 +55,37 @@ export default function calculate(obj, buttonName) {
         };
       }
     }
-    return {};
+    return { ...obj };
   }
 
   if (buttonName === '+/-') {
-    if (obj.next) {
-      return { ...obj, next: (-1 * parseFloat(obj.next)).toString() };
+    if (obj.next !== null) {
+      return { ...obj, next: (-parseFloat(obj.next)).toString() };
     }
-    if (obj.total) {
-      return { ...obj, total: (-1 * parseFloat(obj.total)).toString() };
+    if (obj.total !== null) {
+      return { ...obj, total: (-parseFloat(obj.total)).toString() };
     }
-    return {};
+    return { ...obj };
   }
 
-  // Handle operators (+, -, *, /, %)
   if (['+', '-', '*', '/', '%'].includes(buttonName)) {
-    if (obj.operation) {
-      return {
-        total: obj.total,
-        next: null,
-        operation: buttonName,
-      };
+    if (obj.operation !== null) {
+      try {
+        const total = operate(obj.total, obj.next, obj.operation);
+        return {
+          total: total.toString(),
+          next: null,
+          operation: buttonName,
+        };
+      } catch (error) {
+        return {
+          total: 'Error',
+          next: null,
+          operation: null,
+        };
+      }
     }
-    if (obj.next) {
+    if (obj.next !== null) {
       return {
         total: obj.next,
         next: null,
@@ -104,10 +96,10 @@ export default function calculate(obj, buttonName) {
   }
 
   if (buttonName === 'Del') {
-    if (obj.next) {
+    if (obj.next !== null) {
       return { ...obj, next: obj.next.slice(0, -1) };
     }
-    if (obj.total) {
+    if (obj.total !== null) {
       return { ...obj, total: obj.total.slice(0, -1) };
     }
     return { ...obj };
@@ -124,6 +116,5 @@ export default function calculate(obj, buttonName) {
     }
   }
 
-  // Handle other unknown buttons
   throw Error(`Unknown button '${buttonName}'`);
 }
