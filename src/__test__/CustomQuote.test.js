@@ -23,6 +23,8 @@ describe('CustomQuote component', () => {
     await waitFor(() => {
       expect(screen.queryByText('Loading...')).toBeNull();
     });
+
+    expect(screen.getByTestId('quote-loading')).toMatchSnapshot();
   });
 
   it('renders quote and author after fetching data', async () => {
@@ -39,5 +41,7 @@ describe('CustomQuote component', () => {
       expect(quoteElement).toBeInTheDocument();
       expect(authorElement).toBeInTheDocument();
     });
+
+    expect(screen.getByTestId('quote-loaded')).toMatchSnapshot();
   });
 });
