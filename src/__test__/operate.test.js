@@ -1,33 +1,33 @@
 import operate from '../logic/operate';
 
 test('adds two numbers', () => {
-  expect(operate('2', '3', '+')).toBe('5');
+    expect(operate('2', '3', '+')).toMatchSnapshot();
 });
 
 test('subtracts two numbers', () => {
-  expect(operate('5', '3', '-')).toBe('2');
+    expect(operate('5', '3', '-')).toMatchSnapshot();
 });
 
 test('multiplies two numbers', () => {
-  expect(operate('4', '2', '*')).toBe('8');
+    expect(operate('4', '2', '*')).toMatchSnapshot();
 });
 
 test('divides two numbers', () => {
-  expect(operate('6', '2', '/')).toBe('3');
+    expect(operate('6', '2', '/')).toMatchSnapshot();
 });
 
 test('throws an error when dividing by zero', () => {
-  expect(() => operate('10', '0', '/')).toThrow("Can't divide by 0.");
+    expect(() => operate('10', '0', '/')).toThrowErrorMatchingSnapshot();
 });
 
 test('finds modulo of two numbers', () => {
-  expect(operate('10', '3', '%')).toBe('1');
+    expect(operate('10', '3', '%')).toMatchSnapshot();
 });
 
 test('throws an error when finding modulo by zero', () => {
-  expect(() => operate('10', '0', '%')).toThrow("Can't find modulo as can't divide by 0.");
+    expect(() => operate('10', '0', '%')).toThrowErrorMatchingSnapshot();
 });
 
-test('throws an error for unknown operation', () => {
-  expect(() => operate('10', '5', '^')).toThrow("Unknown operation '^'");
+test('throws an error for an unknown operation', () => {
+    expect(() => operate('10', '5', '^')).toThrowErrorMatchingSnapshot();
 });
