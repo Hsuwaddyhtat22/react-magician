@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CustomQuote.css';
 
-const CustomQuote = () => {
+const CustomQuote = (props) => {
   const [quote, setQuote] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,7 +16,6 @@ const CustomQuote = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Check if the data is an array and has at least one quote
         if (Array.isArray(data) && data.length > 0) {
           setQuote(data[0]);
         } else {
